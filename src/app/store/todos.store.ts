@@ -1,7 +1,7 @@
-import { patchState, signalStore, withMethods, withState } from "@ngrx/signals";
+import { patchState, signalStore, withComputed, withMethods, withState } from "@ngrx/signals";
 import { Todo } from "../model/todo.model";
 import { TodosService } from "../services/todos.service";
-import { inject } from "@angular/core";
+import { computed, inject } from "@angular/core";
 
 export type TodosFilter = 'all' | 'pending' | 'completed';
 
@@ -44,9 +44,43 @@ export const TodosStore = signalStore(
                 patchState(store, (state) => ({
                     todos: [...state.todos, todo]
                 }))
+            },
+            async deleteTodo(id: string) {
+                await todosService.deleteTodo(id);
+                patchState(store, (state) => ({
+                    todos: state.todos.filter(todo => todo.id !== id)
+                }))
+            },
+            async updateTodo(id: string, completed: boolean) {
+                await todosService.updateTodo(id, completed);
+                patchState(store, (state) => ({
+                    todos: state.todos.map(todo =>
+                        todo.id === id ? { ...todo, completed } : todo
+                    )
+                }))
+            },
+            updateFilter(filter: TodosFilter) {
+                patchState(store, { filter })
             }
         })
-    )
-
+    ),
+    // manage computed values
+    // a needed feature to compute derived state
+    // The factory should return a dictionary of computed signals,
+    // utilizing previously defined state and computed signals that are
+    // accessible through its input argument.
+    withComputed((state) => ({
+        filteredTodos: computed(() => {
+            const todos = state.todos();
+            switch (state.filter()) {
+                case 'all':
+                    return todos;
+                case 'pending':
+                    return todos.filter(todo => !todo.completed);
+                case 'completed':
+                    return todos.filter(todo => todo.completed);
+            }
+        })
+    }))
 )
 

@@ -19,6 +19,14 @@ export class TodosService {
             ...todo
         } as Todo;
     }
+
+    async deleteTodo(_id: string) {
+        await sleep(500);
+    }
+
+    async updateTodo(_id: string, _completed: boolean) {
+        await sleep(500);
+    }
 }
 
 async function sleep(ms: number) {
