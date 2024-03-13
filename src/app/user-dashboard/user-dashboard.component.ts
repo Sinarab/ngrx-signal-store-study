@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../model/user.model';
+import { User, UserRoles } from '../model/user.model';
 import { patchState, signalState } from '@ngrx/signals';
 import { MatSlideToggle, MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { PartialStateUpdater } from '@ngrx/signals';
@@ -36,6 +36,6 @@ export class UserDashboardComponent {
 }
 
 //Custom State Updaters
-function setUserRole(role: string): PartialStateUpdater<{ user: User }> {
+function setUserRole(role: UserRoles): PartialStateUpdater<{ user: User }> {
   return (state) => ({ user: { ...state.user, role } });
 }

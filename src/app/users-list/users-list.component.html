@@ -1,0 +1,22 @@
+<h2>User list</h2>
+
+<mat-form-field>
+  <mat-label>Enter username</mat-label>
+  <input matInput #input (keyup.enter)="onAddUser(input.value)" />
+</mat-form-field>
+<mat-list class="user-list">
+  @for (user of usersStore.entities(); track user.id) {
+  <mat-list-item class="user-item">
+    <mat-icon matListItemIcon>account_circle</mat-icon>
+    <div class="item-content">
+      <p><b>{{ user.name }}</b> | {{ user.role }}</p>
+      <button matSuffix mat-icon-button (click)="onDeleteUser(user.id)">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button mat-raised-button (click)="onPromoteUser(user.id, user.role)">
+        Promotion!
+      </button>
+    </div>
+  </mat-list-item>
+  }
+</mat-list>

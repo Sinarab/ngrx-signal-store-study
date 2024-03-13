@@ -1,8 +1,10 @@
 # Ngrx Signals Journey
 - [x] SignalStore: A fully-featured state management solution that provides native support for Angular Signals and offers a robust way to manage application state.
 - [x] SignalState: A lightweight utility for managing signal-based state in Angular components and services in a concise and minimalistic manner.
-- [] RxJS Integration: A plugin for opt-in integration with RxJS, enabling easier handling of asynchronous side effects.
-- [] Entity Management: A plugin for manipulating and querying entity collections in a simple and performant way.
+- [x] RxJS Integration: A plugin for opt-in integration with RxJS, enabling easier handling of asynchronous side effects.
+- [x] Entity Management: A plugin for manipulating and querying entity collections in a simple and performant way.
+
+> Futher refs: [ngrx guide](https://ngrx.io/guide/signals/signal-store)
 
 ## Development server
 

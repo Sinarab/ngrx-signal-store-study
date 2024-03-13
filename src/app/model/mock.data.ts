@@ -1,4 +1,5 @@
 import { Todo } from "./todo.model";
+import { User } from "./user.model";
 
 export const TODOS: Todo[] = [
     {
@@ -32,3 +33,24 @@ export const TODOS: Todo[] = [
         completed: false
     }
 ];
+
+export const USERS: User[] = [
+    {
+        id: Math.random().toString(36).substr(2, 9),
+        name: "Jonhana",
+        email: "teste@email.com",
+        role: "admin"
+    },
+    {
+        id: Math.random().toString(36).substr(2, 9),
+        name: "Maria",
+        email: "teste@email.com",
+        role: "qa"
+    },
+    {
+        id: Math.random().toString(36).substr(2, 9),
+        name: "José",
+        email: "teste@email.com",
+        role: "developer"
+    }
+]

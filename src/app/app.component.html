@@ -11,9 +11,13 @@
     <info></info>
   </div>
 
-  @if (!store.loading()) {
-  <todos-list></todos-list>
-  } @else {
-  <mat-spinner [style]="'margin: 2rem'" [diameter]="40"></mat-spinner>
-  }
+  <div class="lists">
+    @if (!todosStore.loading()) {
+    <todos-list></todos-list>
+    } @else {
+    <mat-spinner [style]="'margin: 2rem'" [diameter]="40"></mat-spinner>
+    }
+
+    <users-list></users-list>
+  </div>
 </div>

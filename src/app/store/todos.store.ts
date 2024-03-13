@@ -20,8 +20,6 @@ const initialState: TodosState = {
     filter: 'all'
 }
 
-
-
 export const TodosStore = signalStore(
     // like any other service, you can provide it in the root module
     { providedIn: 'root' },
