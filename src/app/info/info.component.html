@@ -1,0 +1,24 @@
+<div class="counters">
+  <span>{{ counterLabel() }}</span>
+  <span [style]="">{{ counter2Label() }}</span>
+</div>
+<div class="info">
+  <mat-form-field class="form">
+    <mat-label>Pow calculator</mat-label>
+    <input
+      matInput
+      type="number"
+      maxlength="255"
+      (keyup.enter)="onCalcPow()"
+      [(ngModel)]="value"
+      placeholder="Enter a number"
+    />
+    @if (value) {
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+      <mat-icon>close</mat-icon>
+    </button>
+    }
+  </mat-form-field>
+  <span class="current-label">Current value: {{ currentValue() }} </span>
+  <span class="result-label">Result: {{ result() }} </span>
+</div>

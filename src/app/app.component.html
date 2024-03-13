@@ -7,9 +7,13 @@
     <user-dashboard></user-dashboard>
   </div>
 
+  <div [style]="'margin-top: 1rem;'">
+    <info></info>
+  </div>
+
   @if (!store.loading()) {
-    <todos-list></todos-list>
+  <todos-list></todos-list>
   } @else {
-    <mat-spinner [style]="'margin: 2rem'" [diameter]="40"></mat-spinner>
+  <mat-spinner [style]="'margin: 2rem'" [diameter]="40"></mat-spinner>
   }
 </div>

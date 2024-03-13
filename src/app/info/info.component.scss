@@ -1,0 +1,30 @@
+.counters {
+  display: flex;
+  gap: 1rem;
+}
+
+.info {
+  display: grid;
+  grid-template-areas:
+    "form current-label"
+    "form result-label";
+  column-gap: 1rem;
+}
+
+.current-label,
+.result-label {
+  align-self: flex-start;
+}
+
+.form {
+  grid-area: form;
+  align-self: center;
+}
+
+.current-label {
+  grid-area: current-label;
+}
+
+.result-label {
+  grid-area: result-label;
+}
