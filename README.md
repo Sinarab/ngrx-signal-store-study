@@ -1,10 +1,12 @@
-# NgrxSignalStoreJourney
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+# Ngrx Signals Journey
+- [x] SignalStore: A fully-featured state management solution that provides native support for Angular Signals and offers a robust way to manage application state.
+- [x] SignalState: A lightweight utility for managing signal-based state in Angular components and services in a concise and minimalistic manner.
+- [] RxJS Integration: A plugin for opt-in integration with RxJS, enabling easier handling of asynchronous side effects.
+- [] Entity Management: A plugin for manipulating and querying entity collections in a simple and performant way.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `yarn start` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Code scaffolding
 

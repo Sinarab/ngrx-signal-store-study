@@ -1,0 +1,21 @@
+<div class="user-dashboard">
+  <span>
+    @if (userState.isActivated()) {
+      {{ userState.user.name() }} - {{ userState.user.role() }} - ACTIVATED 
+    }
+    @else {
+      {{ userState.user.name() }} - {{ userState.user.role() }} - DEACTIVATED
+    }
+  </span>
+
+  <div class="user-actions">
+    <mat-slide-toggle
+      (change)="onUserActivateToggled($event)"
+    ></mat-slide-toggle>
+    <mat-button-toggle-group #filter (change)="onUserRoleChanged($event)">
+      <mat-button-toggle value="admin">Admin</mat-button-toggle>
+      <mat-button-toggle value="qa">QA</mat-button-toggle>
+      <mat-button-toggle value="developer">Developer</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+</div>
